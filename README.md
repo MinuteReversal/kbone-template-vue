@@ -1,22 +1,22 @@
 # vue-kbone
 
-使用 vue 多端开发(小程序和Web)，基于 [kbone](https://github.com/wechat-miniprogram/kbone) 的 element 和 render。
+使用 vue 多端开发(小程序和 Web)，基于 [kbone](https://github.com/wechat-miniprogram/kbone) 的 element 和 render。
 
 ## 特性
 
-* 一键接入，立即使用
-* 支持更完整的 vue 语法及特性
-* webpack、es6、babel、hot reload、cli、vue-router、vuex，你想要的都有
+- 一键接入，立即使用
+- 支持更完整的 vue 语法及特性
+- webpack、es6、babel、hot reload、cli、vue-router、vuex，你想要的都有
 
 ## 开发
 
-* Web 端：直接浏览器访问 localhost:8080/ 即可看到效果。
+- Web 端：直接浏览器访问 localhost:8080/ 即可看到效果。
 
 ```
 npm run web
 ```
 
-* 小程序端：使用开发者工具打开 dist/mp 目录即可。
+- 小程序端：使用开发者工具打开 dist/mp 目录即可。
 
 ```
 npm run mp
@@ -24,13 +24,13 @@ npm run mp
 
 ## 构建
 
-* Web 端：构建完成会生成 dist/web 目录
+- Web 端：构建完成会生成 dist/web 目录
 
 ```
 npm run build
 ```
 
-* 小程序端：构建完成会生成 dist/mp 目录
+- 小程序端：构建完成会生成 dist/mp 目录
 
 ```
 npm run build:mp
@@ -75,6 +75,26 @@ npm run build:mp
 
 如果要使用 ts，则在 vue 的 script 标签上加上 `lang="ts"`，具体可参考 src/list/Index.vue。如果要使用 reduce-loader，就不能使用 ts，因为 ts 目前没有支持内联 loader。
 
+## 安装 ts 支持
+
+```
+npm i miniprogram-api-typings
+```
+
+修改 webpack.mp.config.js 中的 resolve 节如下
+
+```json
+{
+  "resolve": {
+    "extensions": [".js", ".ts", ".tsx", ".vue", ".json"],
+    "alias": {
+      "vue$": "vue/dist/vue.esm.js",
+      "@": path.resolve(__dirname, "../src")
+    }
+  }
+}
+```
+
 ## License
 
-MIT 
+MIT

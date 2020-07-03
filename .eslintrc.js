@@ -49,6 +49,7 @@ module.exports = {
     singleQuote: false,
     "no-new": "off",    
     "comma-dangle": "off",
+    quotes: "off",
     "import/no-webpack-loader-syntax": "off",
     "import/first": "off",
     "linebreak-style": ["off", "windows"],
