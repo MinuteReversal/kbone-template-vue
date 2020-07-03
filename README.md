@@ -95,6 +95,9 @@ npm i miniprogram-api-typings
 }
 ```
 
+## 文档  
+[https://developers.weixin.qq.com/community/develop/article/doc/00020a7c280268018ea91fc3c51013](https://developers.weixin.qq.com/community/develop/article/doc/00020a7c280268018ea91fc3c51013)
+
 ## License
 
 MIT
