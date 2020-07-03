@@ -6,10 +6,10 @@
   </div>
 </template>
 
-<script>
-import Vue from 'vue'
-import Header from '../common/Header.vue'
-import Footer from '../common/Footer.vue'
+<script lang="ts">
+import Vue from 'vue';
+import Header from '../common/Header.vue';
+import Footer from '../common/Footer.vue';
 
 export default Vue.extend({
   name: 'Detail',
@@ -18,20 +18,22 @@ export default Vue.extend({
     Footer
   },
   created() {
-    window.addEventListener('wxload', query => console.log('page3 wxload', query))
-    window.addEventListener('wxshow', () => console.log('page3 wxshow'))
-    window.addEventListener('wxready', () => console.log('page3 wxready'))
-    window.addEventListener('wxhide', () => console.log('page3 wxhide'))
-    window.addEventListener('wxunload', () => console.log('page3 wxunload'))
+    window.addEventListener('wxload', query =>
+      console.log('page3 wxload', query)
+    );
+    window.addEventListener('wxshow', () => console.log('page3 wxshow'));
+    window.addEventListener('wxready', () => console.log('page3 wxready'));
+    window.addEventListener('wxhide', () => console.log('page3 wxhide'));
+    window.addEventListener('wxunload', () => console.log('page3 wxunload'));
   },
   methods: {
     onClickBack() {
       if (process.env.isMiniprogram) {
-        wx.navigateBack()
+        // wx.navigateBack();
       }
-    },
-  },
-})
+    }
+  }
+});
 </script>
 
 <style lang="less">
@@ -39,7 +41,8 @@ export default Vue.extend({
   margin-top: 20px;
 }
 
-a, button {
+a,
+button {
   display: block;
   width: 100%;
   height: 30px;

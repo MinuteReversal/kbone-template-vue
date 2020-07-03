@@ -3,66 +3,64 @@
 module.exports = {
   root: true,
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: "babel-eslint",
   },
   env: {
     browser: true,
   },
   // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
   // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-  extends: ['plugin:vue/essential', 'airbnb-base'],
+  extends: ["plugin:vue/essential", "airbnb-base"],
   // required to lint *.vue files
-  plugins: [
-    'vue'
-  ],
+  plugins: ["vue"],
   // check if imports actually resolve
   settings: {
-    'import/resolver': {
+    "import/resolver": {
       webpack: {
-        config: 'build/webpack.base.config.js'
-      }
-    }
+        config: "build/webpack.base.config.js",
+      },
+    },
   },
   rules: {
     // disallow reassignment of function parameters
     // disallow parameter object manipulation except for specific exclusions
-    'no-param-reassign': ['error', {
-      props: true,
-      ignorePropertyModificationsFor: [
-        'state', // for vuex state
-        'acc', // for reduce accumulators
-        'e' // for e.returnvalue
-      ]
-    }],
+    "no-param-reassign": [
+      "error",
+      {
+        props: true,
+        ignorePropertyModificationsFor: [
+          "state", // for vuex state
+          "acc", // for reduce accumulators
+          "e", // for e.returnvalue
+        ],
+      },
+    ],
     // allow optionalDependencies
-    'import/no-extraneous-dependencies': ['error', {
-      optionalDependencies: ['test/unit/index.js']
-    }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        optionalDependencies: ["test/unit/index.js"],
+      },
+    ],
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
     // others
-    'no-console': 'off',
-    'semi': [
-      'error',
-      'never'
-    ],
-    'no-new': 'off',
-    'comma-dangle': [
-      'error',
-      'only-multiline'
-    ],
-    'import/no-webpack-loader-syntax': 'off',
-    'import/first': 'off',
-    'linebreak-style': ['off', 'windows'],
+    "no-console": "off",
+    singleQuote: false,
+    "no-new": "off",    
+    "comma-dangle": "off",
+    "import/no-webpack-loader-syntax": "off",
+    "import/first": "off",
+    "linebreak-style": ["off", "windows"],
   },
-  'globals': {
-    'window': true,
-    'document': true,
-    'App': true,
-    'Page': true,
-    'Component': true,
-    'Behavior': true,
-    'wx': true,
-    'getCurrentPages': true,
-  }
-}
+  globals: {
+    window: true,
+    document: true,
+    App: true,
+    Page: true,
+    Component: true,
+    Behavior: true,
+    wx: true,
+    getCurrentPages: true,
+  },
+};
